@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://chatty-video-call.vercel.app/',
+    origin: 'https://chatty-video-call.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // allow frontend to send cookies
   })
