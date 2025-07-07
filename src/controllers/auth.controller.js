@@ -53,9 +53,7 @@ export async function registerUser(req, res) {
 
     res.cookie("jwt", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true, // prevent XSS attacks,
-      sameSite: "strict", // prevent CSRF attacks
-      secure: true,
+      httpOnly: true, // prevent XSS attacks, 
     });
     // Handle registration logic here
     res.status(201).json({
@@ -87,9 +85,7 @@ export async function loginUser(req, res) {
 
     res.cookie("jwt", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true, // prevent XSS attacks,
-      sameSite: "strict", // prevent CSRF attacks
-      secure: true,
+      httpOnly: true, // prevent XSS attacks, 
     });
 
     res.status(200).json({
@@ -148,7 +144,7 @@ export async function onboard(req, res) {
       console.log("Error updating Stream user during onboarding:", streamError.message);
     }
 
-    res.status(200).json({ 
+    res.status(200).json({
       success: true, user: userDetails(updatedUser),
     });
   } catch (error) {
