@@ -42,9 +42,7 @@ export const getMyFriends = async (req, res) => {
 export const sendFriendRequest = async (req, res) => {
   try {
     const { id: recipientId } = req.params;
-    const currentUserId = req.user._id;
-    console.log('recipientId', recipientId);
-    console.log('currentUserId', currentUserId);
+    const currentUserId = req.user._id; 
 
 
     if (recipientId == currentUserId) {
